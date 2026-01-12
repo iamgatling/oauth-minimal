@@ -11,8 +11,8 @@ import { AuthRequest } from '../middleware/authMiddleware';
 const window = new JSDOM('').window;
 const purify = DOMPurify(window);
 
-const CLIENT_ID = 'test-client-id'; // hardedcoded for demo purposes
-const REDIRECT_URI = 'http://localhost:3001/callback';
+const CLIENT_ID = process.env.CLIENT_ID || 'test-client-id';
+const REDIRECT_URI = process.env.REDIRECT_URI || 'http://localhost:3001/callback';
 
 const sharedStyles = `
   :root {
